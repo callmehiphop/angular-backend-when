@@ -1,6 +1,6 @@
 angular.module('backend', ['ngMockE2E'])
   .factory('when', function($httpBackend) {
-    
+
     'use strict';
 
 
@@ -24,23 +24,23 @@ angular.module('backend', ['ngMockE2E'])
      * @return {object} request types
      */
     var BackendRequest = function(url) {
-      
+
       // args to be apply()'d to $httpBackend.when
       var data = [undefined, url];
-      
+
 
 
 
       /**
        * Exposed Singleton used to set the different arguments
        * that can be used and initiates the request itself
-       */ 
+       */
       var setters = {
 
         /**
          * Does what it says, nothing!
          * Then it returns itself to allow for additional chaining
-         * 
+         *
          * @return {object} setters
          */
         doNothing: getSetters,
@@ -120,7 +120,7 @@ angular.module('backend', ['ngMockE2E'])
 
         }
 
-      };      
+      };
 
 
       /**
@@ -210,7 +210,7 @@ angular.module('backend', ['ngMockE2E'])
        *
        * @param  {string} request type
        * @return {function}
-       */      
+       */
       function on(requestType) {
         return function() {
           var set = makeSetter(0);
