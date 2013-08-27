@@ -39,8 +39,8 @@ angular.module('myApp')
           username: 'jello',
           password: 'biafra'
         }).
-        then()
-          .respond(200, {
+        then().
+          respond(200, {
             data: { 
               message: 'winnebago warrior!' 
             }
