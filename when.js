@@ -1,4 +1,4 @@
-angular.module('backend', ['ngMockE2E'])
+angular.module('dg.backend', ['ngMockE2E'])
   .factory('when', function($httpBackend) {
 
     'use strict';
