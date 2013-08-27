@@ -3,23 +3,19 @@
 
 `$httpBackend` wrapper to clean up declaring routes/responses for e2e testing
 
-Example:
+Examples:
 
+Easily add a `passThrough` to anything, like your views!
 ```javascript
-angular.module('myApp')
-  .run(function(when) {
-    
-    'use strict';
-    
-    // do easy pass throughs
     when(/^\/views\//).
       get().
         doNothing().
         then().
           passThrough();
+```
           
-          
-    // register different HTTP methods to the same address
+Chain different HTTP request types to the same `when()`
+```javascript
     when('/awesome/data').
       // GET => /awesome/data
       get().
@@ -45,10 +41,10 @@ angular.module('myApp')
               message: 'winnebago warrior!' 
             }
           });
-        
+```
 
-    // create different scenarios for the same request type
-    // using/expecting different combinations of data
+Or chain the same request type, creating different scenarios based on the data sent/recieved
+```javascript
     when('/log-in').
       // valid credentials
       post().
@@ -75,6 +71,4 @@ angular.module('myApp')
               get: 'lost'
             }
           });
-        
-  });
 ```
