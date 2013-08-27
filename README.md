@@ -1,10 +1,10 @@
 # angular-backend-when
 
-`$httpBackend` wrapper to clean up declaring routes/responses for e2e testing
+> A wrapper around `$httpBackend` to clean up declaring routes and responses for e2e testing.
 
-Examples:
+### Examples:
 
-Easily add a `passThrough` to anything, like your views!
+##### Easily add a `passThrough` to anything, like your views!
 ```javascript
 when(/^\/views\//).
   get().
@@ -12,8 +12,8 @@ when(/^\/views\//).
     then().
       passThrough();
 ```
-          
-Chain different HTTP request types to the same `when()`
+
+##### Chain different HTTP request types to the same `when()`
 ```javascript
 when('/awesome/data').
   // GET => /awesome/data
@@ -42,7 +42,7 @@ when('/awesome/data').
       });
 ```
 
-Or chain the same request type, creating different scenarios based on the data sent/recieved
+##### Or chain the same request type, creating different scenarios based on the data sent/recieved
 ```javascript
 when('/log-in').
   // valid credentials
